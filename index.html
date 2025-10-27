@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mittal Reserve - A Legacy Reserved</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display+SC:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-maroon: #4A1A1A;
+            --antique-gold: #B08B4F;
+            --barrel-brown: #3B2B24;
+            --charcoal-black: #111111;
+            --faded-ivory: #F2E9E1;
+            --amber-glow: #D4A574;
+            --royal-red: #8B2635;
+            --sepia-brown: #5C4033;
+            --parchment: #E8DCC4;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Old Standard TT', 'Cormorant Garamond', serif;
+            background: var(--charcoal-black);
+            color: var(--faded-ivory);
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><defs><radialGradient id="sealGrad"><stop offset="0%%" stop-color="%23D4A574"/><stop offset="100%%" stop-color="%23B08B4F"/></radialGradient></defs><circle cx="18" cy="18" r="14" fill="url(%23sealGrad)" opacity="0.9"/><circle cx="18" cy="18" r="12" fill="%238B2635" opacity="0.8"/><circle cx="18" cy="18" r="9" fill="%23B08B4F"/><path d="M 18 9 L 19 16 L 18 18 L 17 16 Z M 18 27 L 19 20 L 18 18 L 17 20 Z M 27 18 L 20 19 L 18 18 L 20 17 Z M 9 18 L 16 19 L 18 18 L 16 17 Z" fill="%234A1A1A" opacity="0.6"/><text x="18" y="22" text-anchor="middle" font-size="9" font-weight="bold" fill="%23F2E9E1" font-family="serif">MR</text></svg>'), auto;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(242, 233, 225, 0.02) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(242, 233, 225, 0.02) 3px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(242, 233, 225, 0.02) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(242, 233, 225, 0.02) 3px
+                );
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.3;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+
+        .royal-text {
+            font-family: 'Playfair Display SC', serif;
+            letter-spacing: 3px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--charcoal-black);
+            border-left: 1px solid var(--antique-gold);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--antique-gold), var(--amber-glow));
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(180, 139, 79, 0.5);
+            border: 2px solid var(--charcoal-black);
+        }
+
+        .gate-of-time {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%23111111"/><circle cx="10" cy="10" r="1" fill="%23B08B4F" opacity="0.1"/><circle cx="50" cy="50" r="1" fill="%23D4A574" opacity="0.1"/><circle cx="90" cy="90" r="1" fill="%23B08B4F" opacity="0.1"/></svg>'),
+                radial-gradient(circle at center, rgba(74, 26, 26, 0.3) 0%, rgba(17, 17, 17, 0.95) 70%),
+                linear-gradient(180deg, var(--charcoal-black) 0%, var(--sepia-brown) 50%, var(--charcoal-black) 100%);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 1.5s ease;
+        }
+
+        .gate-of-time.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .wax-seal-loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, var(--royal-red) 0%, var(--deep-maroon) 70%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: sealPulse 2s ease-in-out infinite, sealRotate 4s linear infinite;
+            box-shadow: 
+                0 0 40px rgba(180, 139, 79, 0.6),
+                inset 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .wax-seal-loader.loaded {
+            animation: sealBreak 1s ease-out forwards;
+        }
+
+        @keyframes sealPulse {
+            0%, 100% { box-shadow: 0 0 40px rgba(180, 139, 79, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.5); }
+            50% { box-shadow: 0 0 60px rgba(212, 165, 116, 0.9), inset 0 0 30px rgba(0, 0, 0, 0.7); }
+        }
+
+        @keyframes sealRotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes sealBreak {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
+            100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+        }
+
+        .seal-text {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2rem;
+            color: var(--antique-gold);
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(212, 165, 116, 0.8);
+        }
+
+        .gate-content {
+            text-align: center;
+            z-index: 10001;
+            padding: 80px 40px;
+            background: 
+                linear-gradient(135deg, rgba(74, 26, 26, 0.9) 0%, rgba(59, 43, 36, 0.9) 100%);
+            border: 4px double var(--antique-gold);
+            border-radius: 8px;
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.9),
+                inset 0 0 60px rgba(180, 139, 79, 0.1);
+            position: relative;
+            max-width: 600px;
+            animation: gateEntry 2s ease-out;
+        }
+
+        @keyframes gateEntry {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .gate-year {
+            font-family: 'Playfair Display SC', serif;
+            font-size: 3rem;
+            color: var(--antique-gold);
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(212, 165, 116, 0.6);
+            letter-spacing: 8px;
+        }
+
+        .gate-motto {
+            font-size: 1.3rem;
+            color: var(--faded-ivory);
+            font-style: italic;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .cellar-divider {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--antique-gold), transparent);
+            margin: 30px auto;
+        }
+
+        .age-ledger {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .ledger-input {
+            width: 70px;
+            padding: 15px;
+            font-size: 1.3rem;
+            text-align: center;
+            background: rgba(232, 220, 196, 0.15);
+            border: 2px solid var(--antique-gold);
+            border-radius: 4px;
+            color: var(--faded-ivory);
+            font-family: 'Old Standard TT', serif;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .ledger-input:focus {
+            outline: none;
+            border-color: var(--amber-glow);
+            box-shadow: 
+                inset 0 2px 10px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(212, 165, 116, 0.4);
+        }
+
+        .btn-cellar-enter {
+            background: linear-gradient(135deg, var(--antique-gold) 0%, var(--amber-glow) 100%);
+            color: var(--charcoal-black);
+            padding: 18px 60px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            font-family: 'Cinzel Decorative', serif;
+            letter-spacing: 4px;
+            box-shadow: 0 10px 40px rgba(180, 139, 79, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cellar-enter::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            border-radius: 50%;
+        }
+
+        .btn-cellar-enter:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-cellar-enter:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(212, 165, 116, 0.6);
+        }
+
+        .ambient-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .dust-mote {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--amber-glow);
+            border-radius: 50%;
+            opacity: 0;
+            animation: dustFloat 20s infinite ease-in-out;
+        }
+
+        @keyframes dustFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(0);
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) translateX(100px);
+            }
+        }
+
+        .ember {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, var(--amber-glow) 0%, var(--royal-red) 100%);
+            border-radius: 50%;
+            opacity: 0;
+            animation: emberRise 15s infinite ease-in-out;
+        }
+
+        @keyframes emberRise {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(1);
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) scale(0.5);
+            }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 60px;
+            background: rgba(17, 17, 17, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 2px solid rgba(180, 139, 79, 0.4);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .header-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-seal {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .seal-emblem {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            filter: drop-shadow(0 0 20px rgba(180, 139, 79, 0.6));
+        }
+        
+        .seal-emblem img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            animation: logoGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { 
+                filter: brightness(1) drop-shadow(0 0 10px rgba(180, 139, 79, 0.4)); 
+            }
+            50% { 
+                filter: brightness(1.1) drop-shadow(0 0 20px rgba(212, 165, 116, 0.6)); 
+            }
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            color: var(--antique-gold);
+            font-family: 'Cinzel Decorative', serif;
+            letter-spacing: 6px;
+            text-shadow: 
+                0 0 20px rgba(212, 165, 116, 0.8),
+                2px 2px 4px rgba(0, 0, 0, 0.9),
+                0 0 40px rgba(180, 139, 79, 0.4);
+            position: relative;
+        }
+        
+        .logo-text::before {
+            content: '◆';
+            position: absolute;
+            left: -30px;
+            color: var(--antique-gold);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .logo-text::after {
+            content: '◆';
+            position: absolute;
+            right: -30px;
+            color: var(--antique-gold);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: var(--faded-ivory);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 2px;
+            font-family: 'Playfair Display SC', serif;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--antique-gold);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--antique-gold);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23111111"/><path d="M 0 0 Q 50 50 0 100 Q 50 150 0 200 L 200 200 Q 150 150 200 100 Q 150 50 200 0 Z" fill="%234A1A1A" opacity="0.1"/></svg>'),
+                radial-gradient(ellipse at center, rgba(74, 26, 26, 0.4) 0%, rgba(17, 17, 17, 1) 70%),
+                linear-gradient(135deg, var(--barrel-brown) 0%, var(--charcoal-black) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(180, 139, 79, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
+            animation: candleGlow 8s infinite ease-in-out;
+        }
+
+        @keyframes candleGlow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 1400px;
+            padding: 0 20px;
+            animation: heroZoom 2.5s ease-out;
+        }
+
+        @keyframes heroZoom {
+            from {
+                opacity: 0;
+                transform: scale(1.1);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero-seal {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 30px;
+            filter: drop-shadow(0 0 40px rgba(180, 139, 79, 0.7));
+            animation: sealPulse 3s ease-in-out infinite;
+        }
+
+        .hero-seal img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hero-title {
+            font-size: 6rem;
+            color: var(--antique-gold);
+            text-shadow: 
+                0 0 40px rgba(212, 165, 116, 0.6),
+                4px 4px 8px rgba(0, 0, 0, 0.8);
+            margin-bottom: 25px;
+            letter-spacing: 12px;
+            animation: titleGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { text-shadow: 0 0 40px rgba(212, 165, 116, 0.6), 4px 4px 8px rgba(0, 0, 0, 0.8); }
+            50% { text-shadow: 0 0 60px rgba(212, 165, 116, 0.9), 4px 4px 8px rgba(0, 0, 0, 0.8); }
+        }
+
+        .hero-tagline {
+            font-size: 2.5rem;
+            color: var(--faded-ivory);
+            font-family: 'Old Standard TT', serif;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--amber-glow);
+            margin-bottom: 60px;
+            letter-spacing: 3px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-royal, .btn-royal-outline {
+            padding: 20px 50px;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-family: 'Playfair Display SC', serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-royal {
+            background: linear-gradient(135deg, var(--antique-gold) 0%, var(--amber-glow) 100%);
+            color: var(--charcoal-black);
+            border: none;
+            box-shadow: 0 10px 40px rgba(180, 139, 79, 0.4);
+        }
+
+        .btn-royal::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            border-radius: 50%;
+        }
+
+        .btn-royal:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn-royal:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 60px rgba(212, 165, 116, 0.6);
+        }
+
+        .btn-royal-outline {
+            background: transparent;
+            color: var(--antique-gold);
+            border: 2px solid var(--antique-gold);
+        }
+
+        .btn-royal-outline:hover {
+            background: rgba(180, 139, 79, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 60px rgba(180, 139, 79, 0.3);
+        }
+
+        section {
+            padding: 140px 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .section-ornament {
+            font-size: 2.5rem;
+            color: var(--antique-gold);
+            margin-bottom: 25px;
+            opacity: 0.7;
+        }
+
+        .section-title {
+            font-size: 4.5rem;
+            color: var(--antique-gold);
+            margin-bottom: 30px;
+            text-shadow: 0 0 30px rgba(212, 165, 116, 0.4);
+            letter-spacing: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 1.6rem;
+            color: var(--faded-ivory);
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .vault {
+            background: 
+                radial-gradient(ellipse at center, rgba(74, 26, 26, 0.3) 0%, transparent 60%),
+                linear-gradient(180deg, var(--charcoal-black) 0%, var(--barrel-brown) 50%, var(--charcoal-black) 100%);
+        }
+
+        .collection-category {
+            margin-bottom: 100px;
+        }
+
+        .category-title {
+            font-size: 2.8rem;
+            color: var(--amber-glow);
+            margin-bottom: 15px;
+            text-align: center;
+            font-family: 'Playfair Display SC', serif;
+            letter-spacing: 6px;
+        }
+
+        .category-subtitle {
+            text-align: center;
+            color: var(--faded-ivory);
+            opacity: 0.8;
+            margin-bottom: 60px;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .bottles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 50px;
+        }
+
+        .bottle-card {
+            background: 
+                linear-gradient(135deg, rgba(74, 26, 26, 0.4) 0%, rgba(59, 43, 36, 0.3) 100%);
+            border: 2px solid rgba(180, 139, 79, 0.3);
+            border-radius: 8px;
+            padding: 45px 35px;
+            text-align: center;
+            transition: all 0.6s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .bottle-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(212, 165, 116, 0.1) 50%, transparent 60%);
+            animation: royalShine 5s infinite;
+        }
+
+        @keyframes royalShine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .bottle-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 70px rgba(180, 139, 79, 0.4);
+            border-color: var(--antique-gold);
+        }
+
+        .bottle-display {
+            width: 100%;
+            height: 280px;
+            background: 
+                radial-gradient(ellipse at center, rgba(212, 165, 116, 0.15) 0%, transparent 70%),
+                linear-gradient(180deg, rgba(232, 220, 196, 0.08) 0%, rgba(180, 139, 79, 0.12) 100%);
+            border: 2px solid rgba(180, 139, 79, 0.2);
+            border-radius: 6px;
+            margin-bottom: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bottle-3d-placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0.95;
+            animation: bottleGlow 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 30px rgba(180, 139, 79, 0.4));
+        }
+
+        @keyframes bottleGlow {
+            0%, 100% { opacity: 0.9; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+
+        .bottle-name {
+            font-size: 1.9rem;
+            color: var(--antique-gold);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-family: 'Playfair Display SC', serif;
+        }
+
+        .bottle-type {
+            font-size: 1rem;
+            color: var(--amber-glow);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+
+        .bottle-tagline {
+            font-size: 1.1rem;
+            color: var(--faded-ivory);
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .bottle-notes {
+            font-size: 0.95rem;
+            color: var(--faded-ivory);
+            margin-bottom: 25px;
+            opacity: 0.85;
+        }
+
+        .bottle-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--antique-gold) 0%, var(--amber-glow) 100%);
+            color: var(--charcoal-black);
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            font-family: 'Cinzel Decorative', serif;
+        }
+
+        .bottle-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .btn-bottle {
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: 2px solid var(--antique-gold);
+            color: var(--antique-gold);
+            background: transparent;
+            font-family: 'Playfair Display SC', serif;
+            letter-spacing: 1px;
+        }
+
+        .btn-bottle:hover {
+            background: var(--antique-gold);
+            color: var(--charcoal-black);
+            box-shadow: 0 5px 25px rgba(180, 139, 79, 0.4);
+        }
+
+        .mixology {
+            background: 
+                linear-gradient(180deg, var(--charcoal-black) 0%, var(--deep-maroon) 50%, var(--charcoal-black) 100%);
+        }
+
+        .cocktails-scroll {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+        }
+
+        .parchment-card {
+            background: 
+                linear-gradient(135deg, rgba(59, 43, 36, 0.8) 0%, rgba(74, 26, 26, 0.6) 100%);
+            border: 3px solid var(--antique-gold);
+            border-radius: 8px;
+            padding: 45px;
+            transition: all 0.6s ease;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        .parchment-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 30px 80px rgba(180, 139, 79, 0.4);
+        }
+
+        .cocktail-glass-icon {
+            width: 100%;
+            height: 200px;
+            background: 
+                radial-gradient(ellipse at center, rgba(212, 165, 116, 0.2) 0%, transparent 60%);
+            border: 2px solid rgba(180, 139, 79, 0.3);
+            border-radius: 6px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            opacity: 0.7;
+        }
+
+        .cocktail-name {
+            font-size: 2.1rem;
+            color: var(--antique-gold);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display SC', serif;
+            letter-spacing: 3px;
+        }
+
+        .cocktail-recipe {
+            font-size: 1.1rem;
+            color: var(--faded-ivory);
+            margin-bottom: 20px;
+            line-height: 1.9;
+            opacity: 0.9;
+        }
+
+        .cocktail-method {
+            font-size: 0.98rem;
+            color: var(--amber-glow);
+            font-style: italic;
+            margin-bottom: 25px;
+            opacity: 0.85;
+        }
+
+        .taste-icons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .taste-icon {
+            background: rgba(180, 139, 79, 0.2);
+            color: var(--antique-gold);
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(180, 139, 79, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .heritage {
+            background: var(--charcoal-black);
+            position: relative;
+        }
+
+        .timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .heritage-block {
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1.2s ease;
+            padding: 50px;
+            background: rgba(59, 43, 36, 0.3);
+            border: 2px solid rgba(180, 139, 79, 0.3);
+            border-radius: 8px;
+        }
+
+        .heritage-block.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .heritage-image-frame {
+            width: 100%;
+            height: 450px;
+            background: 
+                linear-gradient(135deg, rgba(74, 26, 26, 0.6) 0%, rgba(59, 43, 36, 0.6) 100%),
+                radial-gradient(circle at center, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+            border: 3px solid var(--antique-gold);
+            border-radius: 6px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .heritage-year {
+            font-size: 2.6rem;
+            color: var(--antique-gold);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display SC', serif;
+            letter-spacing: 5px;
+        }
+
+        .heritage-story {
+            font-size: 1.25rem;
+            color: var(--faded-ivory);
+            line-height: 2.2;
+            opacity: 0.9;
+        }
+
+        .vip-club {
+            background: 
+                radial-gradient(ellipse at center, rgba(139, 38, 53, 0.3) 0%, transparent 70%),
+                linear-gradient(135deg, var(--charcoal-black) 0%, var(--barrel-brown) 100%);
+            border-top: 2px solid rgba(180, 139, 79, 0.4);
+            border-bottom: 2px solid rgba(180, 139, 79, 0.4);
+        }
+
+        .vip-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .vip-perks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 70px;
+        }
+
+        .vip-perk {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(74, 26, 26, 0.4);
+            border: 2px solid rgba(180, 139, 79, 0.3);
+            border-radius: 6px;
+            transition: all 0.5s ease;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .vip-perk:hover {
+            transform: translateY(-10px);
+            border-color: var(--antique-gold);
+            box-shadow: 0 20px 60px rgba(180, 139, 79, 0.3);
+        }
+
+        .perk-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--amber-glow);
+        }
+
+        .perk-title {
+            font-size: 1.5rem;
+            color: var(--antique-gold);
+            margin-bottom: 15px;
+            font-family: 'Playfair Display SC', serif;
+            letter-spacing: 2px;
+        }
+
+        .perk-description {
+            font-size: 1.05rem;
+            color: var(--faded-ivory);
+            opacity: 0.85;
+        }
+
+        .vip-form-panel {
+            background: 
+                linear-gradient(135deg, rgba(59, 43, 36, 0.8) 0%, rgba(74, 26, 26, 0.8) 100%);
+            padding: 60px 50px;
+            border-radius: 8px;
+            border: 3px double var(--antique-gold);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        .form-field {
+            margin-bottom: 30px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 1.05rem;
+            color: var(--antique-gold);
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+            font-family: 'Playfair Display SC', serif;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px;
+            background: rgba(232, 220, 196, 0.12);
+            border: 2px solid rgba(180, 139, 79, 0.4);
+            border-radius: 4px;
+            color: var(--faded-ivory);
+            font-size: 1.05rem;
+            font-family: 'Old Standard TT', serif;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--antique-gold);
+            box-shadow: 
+                inset 0 2px 10px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(212, 165, 116, 0.3);
+        }
+
+        .form-checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 18px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--faded-ivory);
+            cursor: pointer;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--antique-gold) 0%, var(--amber-glow) 100%);
+            color: var(--charcoal-black);
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            letter-spacing: 4px;
+            font-family: 'Cinzel Decorative', serif;
+            box-shadow: 0 10px 40px rgba(180, 139, 79, 0.4);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 60px rgba(212, 165, 116, 0.6);
+        }
+
+        .limited-editions {
+            background: 
+                linear-gradient(180deg, var(--charcoal-black) 0%, var(--deep-maroon) 100%);
+        }
+
+        .museum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 60px;
+        }
+
+        .museum-piece {
+            background: 
+                linear-gradient(135deg, rgba(59, 43, 36, 0.7) 0%, rgba(74, 26, 26, 0.7) 100%);
+            border: 4px double var(--antique-gold);
+            border-radius: 8px;
+            padding: 50px;
+            position: relative;
+            transition: all 0.7s ease;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8);
+        }
+
+        .museum-piece:hover {
+            transform: scale(1.05);
+            box-shadow: 0 35px 100px rgba(180, 139, 79, 0.4);
+        }
+
+        .limited-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, var(--royal-red) 0%, var(--deep-maroon) 100%);
+            color: var(--antique-gold);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            box-shadow: 0 5px 25px rgba(139, 38, 53, 0.6);
+            font-family: 'Cinzel Decorative', serif;
+        }
+
+        .museum-bottle {
+            width: 100%;
+            height: 350px;
+            background: 
+                radial-gradient(ellipse at center, rgba(212, 165, 116, 0.2) 0%, transparent 70%);
+            border: 3px solid rgba(180, 139, 79, 0.4);
+            border-radius: 6px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .museum-name {
+            font-size: 2.3rem;
+            color: var(--antique-gold);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display SC', serif;
+            letter-spacing: 3px;
+        }
+
+        .museum-description {
+            font-size: 1.15rem;
+            color: var(--faded-ivory);
+            margin-bottom: 30px;
+            line-height: 2;
+            opacity: 0.9;
+        }
+
+        .museum-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background: rgba(180, 139, 79, 0.2);
+            color: var(--antique-gold);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(180, 139, 79, 0.4);
+            letter-spacing: 1px;
+        }
+
+        footer {
+            background: var(--charcoal-black);
+            padding: 100px 60px 50px;
+            border-top: 3px double var(--antique-gold);
+            position: relative;
+        }
+
+        .footer-seal {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 40px;
+            filter: drop-shadow(0 0 40px rgba(180, 139, 79, 0.6));
+        }
+
+        .footer-seal img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            color: var(--antique-gold);
+            margin-bottom: 25px;
+            font-family: 'Playfair Display SC', serif;
+            letter-spacing: 3px;
+        }
+
+        .footer-section p {
+            color: var(--faded-ivory);
+            opacity: 0.85;
+            line-height: 2;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            color: var(--faded-ivory);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .footer-links a:hover {
+            color: var(--antique-gold);
+            opacity: 1;
+            padding-left: 10px;
+        }
+
+        .social-seals {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-seal {
+            width: 50px;
+            height: 50px;
+            background: rgba(180, 139, 79, 0.2);
+            border: 2px solid rgba(180, 139, 79, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--antique-gold);
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.4s ease;
+        }
+
+        .social-seal:hover {
+            background: var(--antique-gold);
+            color: var(--charcoal-black);
+            box-shadow: 0 5px 25px rgba(180, 139, 79, 0.5);
+            transform: translateY(-4px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 2px solid rgba(180, 139, 79, 0.3);
+        }
+
+        .footer-bottom p {
+            color: var(--faded-ivory);
+            opacity: 0.75;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .legal-text {
+            font-size: 0.95rem;
+            color: var(--amber-glow);
+            opacity: 0.7;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 25px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.8rem;
+            }
+
+            section {
+                padding: 100px 25px;
+            }
+
+            .bottles-grid,
+            .cocktails-scroll,
+            .museum-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vip-form-panel {
+                padding: 40px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-particles" id="particles"></div>
+
+    <div class="gate-of-time" id="gateOfTime">
+        <div class="wax-seal-loader" id="waxSeal">
+            <span class="seal-text">MR</span>
+        </div>
+        <div class="gate-content">
+            <h1 class="gate-year">INDIA, 1899</h1>
+            <p class="gate-motto">"Born of Fire. Aged in Silence. Reserved for Eternity."</p>
+            <div class="cellar-divider"></div>
+            <div class="age-ledger">
+                <input type="number" class="ledger-input" placeholder="DD" id="gateDay" min="1" max="31">
+                <input type="number" class="ledger-input" placeholder="MM" id="gateMonth" min="1" max="12">
+                <input type="number" class="ledger-input" placeholder="YYYY" id="gateYear" min="1900" max="2024">
+            </div>
+            <button class="btn-cellar-enter" onclick="enterCellar()">ENTER THE CELLAR</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-seal">
+                <div class="seal-emblem">
+                    <img src="attached_assets/mittal reserve logo_1761563187348.png" alt="Mittal Reserve Logo">
+                </div>
+                <div class="logo-text">MITTAL RESERVE</div>
+            </div>
+            <nav>
+                <a href="#vault">THE VAULT</a>
+                <a href="#mixology">MIXOLOGY</a>
+                <a href="#heritage">HERITAGE</a>
+                <a href="#vip">VIP CLUB</a>
+                <a href="#limited">LIMITED EDITIONS</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-seal">
+                <img src="attached_assets/mittal reserve logo_1761563187348.png" alt="Mittal Reserve Seal">
+            </div>
+            <h1 class="hero-title">MITTAL RESERVE</h1>
+            <p class="hero-tagline">A Legacy Reserved</p>
+            <div class="cellar-divider"></div>
+            <p class="hero-subtitle">Aged in silence. Crafted for the discerning collector.</p>
+            <div class="hero-cta">
+                <a href="#vault" class="btn-royal">EXPLORE THE COLLECTION</a>
+                <a href="#vip" class="btn-royal-outline">JOIN THE VIP CIRCLE</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="vault" class="vault">
+        <div class="section-header">
+            <div class="section-ornament">◈</div>
+            <h2 class="section-title">THE VINTAGE VAULT</h2>
+            <div class="cellar-divider"></div>
+            <p class="section-subtitle">Born of Fire, Aged in Silence, Reserved for Eternity</p>
+        </div>
+
+        <div class="collection-category">
+            <h3 class="category-title">I. HERITAGE COLLECTION</h3>
+            <p class="category-subtitle">Core & Founding Line</p>
+            <div class="bottles-grid">
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_luxury_whisky_bottle_c1039f3b.png" alt="Heritage XII" class="bottle-3d-placeholder">
+                    </div>
+                    <h4 class="bottle-name">Heritage XII</h4>
+                    <p class="bottle-type">Single Malt Whisky</p>
+                    <p class="bottle-tagline">"Aged in Silence, Born of Fire."</p>
+                    <p class="bottle-notes">Oak · Honey · Clove · Vanilla</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_luxury_whisky_bottle_c1039f3b.png" alt="Imperial Darbar" class="bottle-3d-placeholder">
+                    </div>
+                    <h4 class="bottle-name">Imperial Darbar</h4>
+                    <p class="bottle-type">Barrel Whisky</p>
+                    <p class="bottle-tagline">"Where Kings Gathered to Toast."</p>
+                    <p class="bottle-notes">Dried Fruit · Spice · Sandalwood</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_luxury_whisky_bottle_c1039f3b.png" alt="Rajputana Reserve" class="bottle-3d-placeholder">
+                    </div>
+                    <h4 class="bottle-name">Rajputana Reserve</h4>
+                    <p class="bottle-type">Highland Whisky</p>
+                    <p class="bottle-tagline">"Pride of the Maharajas."</p>
+                    <p class="bottle-notes">Smoked Oak · Jaggery · Fig</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_brandy_bottle_colonial_a9175aaf.png" alt="Amber Court" class="bottle-3d-placeholder">
+                    </div>
+                    <h4 class="bottle-name">Amber Court</h4>
+                    <p class="bottle-type">18-Year Malt</p>
+                    <p class="bottle-tagline">"The Light Beneath the Barrel."</p>
+                    <p class="bottle-notes">Maple · Raisin · Nutmeg</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collection-category">
+            <h3 class="category-title">II. CRIMSON ESTATE SERIES</h3>
+            <p class="category-subtitle">Wines of Royal Heritage</p>
+            <div class="bottles-grid">
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_royal_wine_bottle_f1d7a85c.png" alt="Crimson Royale" class="bottle-3d-placeholder">
+                    </div>
+                    <h4 class="bottle-name">Crimson Royale</h4>
+                    <p class="bottle-type">Red Estate</p>
+                    <p class="bottle-tagline">"Harvested Beneath the Monsoon Moon."</p>
+                    <p class="bottle-notes">Dark Cherry · Leather · Saffron</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_royal_wine_bottle_f1d7a85c.png" alt="Noor Mahal Rosé" class="bottle-3d-placeholder">
+                    </div>
+                    <h4 class="bottle-name">Noor Mahal Rosé</h4>
+                    <p class="bottle-type">Vintage Rosé</p>
+                    <p class="bottle-tagline">"Blush of the Empress."</p>
+                    <p class="bottle-notes">Rose Petal · Honey · Strawberry</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_royal_wine_bottle_f1d7a85c.png" alt="Ruby Courtyard" class="bottle-3d-placeholder">
+                    </div>
+                    <h4 class="bottle-name">Ruby Courtyard</h4>
+                    <p class="bottle-type">Cabernet Blend</p>
+                    <p class="bottle-tagline">"Where Time Aged Like Wine."</p>
+                    <p class="bottle-notes">Pomegranate · Cinnamon · Dust</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_royal_wine_bottle_f1d7a85c.png" alt="Velvet Empire" class="bottle-3d-placeholder">
+                    </div>
+                    <h4 class="bottle-name">Velvet Empire</h4>
+                    <p class="bottle-type">Merlot</p>
+                    <p class="bottle-tagline">"Soft as Silk, Strong as Legacy."</p>
+                    <p class="bottle-notes">Cocoa · Plum · Vanilla</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collection-category">
+            <h3 class="category-title">III. BARREL RESERVE</h3>
+            <p class="category-subtitle">Limited & Rare Expressions</p>
+            <div class="bottles-grid">
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_luxury_whisky_bottle_c1039f3b.png" alt="Barrel Sovereign 001" class="bottle-3d-placeholder">
+                    </div>
+                    <div class="bottle-badge">001/500</div>
+                    <h4 class="bottle-name">Barrel Sovereign 001</h4>
+                    <p class="bottle-type">Cask Strength Whisky</p>
+                    <p class="bottle-tagline">"Liquid Fire, Royal Blood."</p>
+                    <p class="bottle-notes">Smoke · Pepper · Caramel · 58% ABV</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_luxury_whisky_bottle_c1039f3b.png" alt="The Maharaja Cask" class="bottle-3d-placeholder">
+                    </div>
+                    <h4 class="bottle-name">The Maharaja Cask</h4>
+                    <p class="bottle-type">Vintage Whisky</p>
+                    <p class="bottle-tagline">"Every Drop a Coronation."</p>
+                    <p class="bottle-notes">Burnt Sugar · Nut · Clove</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_brandy_bottle_colonial_a9175aaf.png" alt="Midnight Heirloom" class="bottle-3d-placeholder">
+                    </div>
+                    <h4 class="bottle-name">Midnight Heirloom</h4>
+                    <p class="bottle-type">21-Year Malt</p>
+                    <p class="bottle-tagline">"Aged Beyond Memory."</p>
+                    <p class="bottle-notes">Tobacco · Cocoa · Toasted Oak</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+
+                <div class="bottle-card">
+                    <div class="bottle-display">
+                        <img src="vintage_luxury_rum_decanter_adf5481f.png" alt="Sultan's Proof" class="bottle-3d-placeholder">
+                    </div>
+                    <h4 class="bottle-name">Sultan's Proof</h4>
+                    <p class="bottle-type">Double Barrel Rum</p>
+                    <p class="bottle-tagline">"Strength of a Throne."</p>
+                    <p class="bottle-notes">Molasses · Black Pepper · Smoke</p>
+                    <div class="bottle-actions">
+                        <button class="btn-bottle">View Story</button>
+                        <button class="btn-bottle">Reserve</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mixology" class="mixology">
+        <div class="section-header">
+            <div class="section-ornament">◈</div>
+            <h2 class="section-title">ROYAL MIXOLOGY</h2>
+            <div class="cellar-divider"></div>
+            <p class="section-subtitle">Mixology for Monarchs</p>
+        </div>
+
+        <div class="cocktails-scroll">
+            <div class="parchment-card">
+                <div class="cocktail-glass-icon">🥃</div>
+                <h3 class="cocktail-name">The Maharaja Mule</h3>
+                <p class="cocktail-recipe">
+                    Mittal Barrel Strength · Spiced Ginger Beer<br>
+                    Fresh Lime Juice · Aromatic Bitters
+                </p>
+                <p class="cocktail-method">
+                    Build in copper mug over ice. Garnish with mint sprig and lime wheel.
+                </p>
+                <div class="taste-icons">
+                    <span class="taste-icon">Spicy</span>
+                    <span class="taste-icon">Bold</span>
+                    <span class="taste-icon">Royal</span>
+                </div>
+            </div>
+
+            <div class="parchment-card">
+                <div class="cocktail-glass-icon">🍾</div>
+                <h3 class="cocktail-name">Golden Dawn</h3>
+                <p class="cocktail-recipe">
+                    Mittal Heritage XII · Saffron Honey Syrup<br>
+                    Champagne · Edible Gold Leaf
+                </p>
+                <p class="cocktail-method">
+                    Stir spirits with syrup, top with champagne. Float gold leaf.
+                </p>
+                <div class="taste-icons">
+                    <span class="taste-icon">Elegant</span>
+                    <span class="taste-icon">Aromatic</span>
+                    <span class="taste-icon">Celebratory</span>
+                </div>
+            </div>
+
+            <div class="parchment-card">
+                <div class="cocktail-glass-icon">🍷</div>
+                <h3 class="cocktail-name">Rajput Royale</h3>
+                <p class="cocktail-recipe">
+                    Mittal Crimson Royale · Pomegranate Reduction<br>
+                    Clove · Fresh Rosemary
+                </p>
+                <p class="cocktail-method">
+                    Muddle clove, add wine and reduction. Garnish with rosemary.
+                </p>
+                <div class="taste-icons">
+                    <span class="taste-icon">Rich</span>
+                    <span class="taste-icon">Spiced</span>
+                    <span class="taste-icon">Luxurious</span>
+                </div>
+            </div>
+
+            <div class="parchment-card">
+                <div class="cocktail-glass-icon">☕</div>
+                <h3 class="cocktail-name">Colonial Twilight</h3>
+                <p class="cocktail-recipe">
+                    Mittal Imperial Darbar · Smoked Tea Infusion<br>
+                    Lemon Essence · Demerara Sugar
+                </p>
+                <p class="cocktail-method">
+                    Shake with ice, strain into coupe glass. Lemon twist garnish.
+                </p>
+                <div class="taste-icons">
+                    <span class="taste-icon">Smoky</span>
+                    <span class="taste-icon">Refined</span>
+                    <span class="taste-icon">Evening</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="heritage" class="heritage">
+        <div class="section-header">
+            <div class="section-ornament">◈</div>
+            <h2 class="section-title">HERITAGE & LEGACY</h2>
+            <div class="cellar-divider"></div>
+            <p class="section-subtitle">A Journey Through Time, Tradition, and Excellence</p>
+        </div>
+
+        <div class="timeline">
+            <div class="heritage-block">
+                <div class="heritage-image-frame"></div>
+                <h3 class="heritage-year">FOUNDING PRINCIPLES - 1947</h3>
+                <p class="heritage-story">
+                    Born in the year of India's independence, Mittal Reserve represents the perfect union of ancient Indian distilling wisdom and European aging techniques. Our founders envisioned a brand that would capture the spirit of a new era—one of opulence, sophistication, and uncompromising quality. Each bottle tells a story of heritage, carrying forward traditions perfected over centuries.
+                </p>
+            </div>
+
+            <div class="heritage-block">
+                <div class="heritage-image-frame"></div>
+                <h3 class="heritage-year">THE ART OF MATURATION</h3>
+                <p class="heritage-story">
+                    Deep within our stone cellars, beneath the earth where temperature and humidity remain constant, our spirits rest in carefully selected oak barrels. Each cask breathes in the unique climate, absorbing the essence of time itself. Our master distillers monitor every barrel with the patience of artisans, waiting for that perfect moment when age transforms spirit into liquid gold.
+                </p>
+            </div>
+
+            <div class="heritage-block">
+                <div class="heritage-image-frame"></div>
+                <h3 class="heritage-year">BRAND PHILOSOPHY</h3>
+                <p class="heritage-story">
+                    Mittal Reserve is not merely a drink; it is a time capsule, preserving the spirit of opulence and rarity for the modern collector. We believe that true luxury lies not in abundance, but in scarcity and exclusivity. Each bottle represents hours of craftsmanship, years of aging, and decades of tradition. When you hold a Mittal Reserve, you hold more than whisky—you hold legacy.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="vip" class="vip-club">
+        <div class="section-header">
+            <div class="section-ornament">◈</div>
+            <h2 class="section-title">THE INNER CIRCLE</h2>
+            <div class="cellar-divider"></div>
+            <p class="section-subtitle">Enter the Collector's Vault</p>
+        </div>
+
+        <div class="vip-container">
+            <div class="vip-perks">
+                <div class="vip-perk">
+                    <div class="perk-icon">🏆</div>
+                    <h4 class="perk-title">Early Access</h4>
+                    <p class="perk-description">Pre-order limited editions before public release</p>
+                </div>
+                <div class="vip-perk">
+                    <div class="perk-icon">🎨</div>
+                    <h4 class="perk-title">NFT Provenance</h4>
+                    <p class="perk-description">Blockchain authentication & digital collectibles</p>
+                </div>
+                <div class="vip-perk">
+                    <div class="perk-icon">🥃</div>
+                    <h4 class="perk-title">Private Tastings</h4>
+                    <p class="perk-description">Invitation-only events with master distillers</p>
+                </div>
+                <div class="vip-perk">
+                    <div class="perk-icon">📦</div>
+                    <h4 class="perk-title">Reserved Allocations</h4>
+                    <p class="perk-description">Guaranteed access to ultra-rare releases</p>
+                </div>
+            </div>
+
+            <div class="vip-form-panel">
+                <h3 class="royal-text" style="text-align: center; color: var(--antique-gold); margin-bottom: 40px; font-size: 2rem;">UNLOCK ACCESS</h3>
+                
+                <form id="vipForm" onsubmit="submitVIP(event)">
+                    <div class="form-field">
+                        <label class="form-label">FULL NAME</label>
+                        <input type="text" class="form-input" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label">EMAIL ADDRESS</label>
+                        <input type="email" class="form-input" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label">COLLECTOR INTERESTS</label>
+                        <div class="form-checkbox-grid">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="whisky">
+                                <span>Whisky</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="wine">
+                                <span>Wine</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="nfts">
+                                <span>NFTs</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="rare-casks">
+                                <span>Rare Casks</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="form-submit">UNLOCK ELITE ACCESS</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="limited" class="limited-editions">
+        <div class="section-header">
+            <div class="section-ornament">◈</div>
+            <h2 class="section-title">LIMITED EDITIONS</h2>
+            <div class="cellar-divider"></div>
+            <p class="section-subtitle">The Museum of Time</p>
+        </div>
+
+        <div class="museum-grid">
+            <div class="museum-piece">
+                <div class="limited-badge">BATCH 001/500</div>
+                <div class="museum-bottle">
+                    <img src="vintage_luxury_whisky_bottle_c1039f3b.png" alt="Barrel Sovereign 001" class="bottle-3d-placeholder" style="width: 80%; height: 80%; object-fit: contain;">
+                </div>
+                <h3 class="museum-name">Barrel Sovereign 001</h3>
+                <p class="museum-description">
+                    A masterpiece of maturation, aged 15 years in first-fill sherry casks. Only 500 bottles will ever exist, each individually numbered and authenticated. This is not just whisky—this is history in a bottle.
+                </p>
+                <div class="museum-meta">
+                    <span class="meta-tag">15 Years</span>
+                    <span class="meta-tag">Sherry Cask</span>
+                    <span class="meta-tag">58% ABV</span>
+                    <span class="meta-tag">500 Bottles</span>
+                </div>
+                <button class="btn-royal" style="width: 100%;">RESERVE NOW</button>
+            </div>
+
+            <div class="museum-piece">
+                <div class="limited-badge">COLLECTOR'S</div>
+                <div class="museum-bottle">
+                    <img src="vintage_brandy_bottle_colonial_a9175aaf.png" alt="Heritage Founder's Reserve" class="bottle-3d-placeholder" style="width: 80%; height: 80%; object-fit: contain;">
+                </div>
+                <h3 class="museum-name">Heritage Founder's Reserve</h3>
+                <p class="museum-description">
+                    A tribute to our founding year, 1947. Blended from our oldest reserves and finished in rare Indian teak barrels. Each bottle comes with a certificate of authenticity and a piece of the original barrel.
+                </p>
+                <div class="museum-meta">
+                    <span class="meta-tag">1947 Tribute</span>
+                    <span class="meta-tag">Teak Finish</span>
+                    <span class="meta-tag">45% ABV</span>
+                    <span class="meta-tag">Limited</span>
+                </div>
+                <button class="btn-royal" style="width: 100%;">VIEW STORY</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-seal">
+            <img src="attached_assets/mittal reserve logo_1761563187348.png" alt="Mittal Reserve">
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MITTAL RESERVE</h3>
+                <p>
+                    A legacy reserved for those who appreciate the finest things in life. Crafted with passion, aged with patience, enjoyed with reverence.
+                </p>
+                <div class="social-seals">
+                    <a href="https://www.instagram.com/drunk___captain/?next=%2Fdrunk___captain%2F&hl=en" target="_blank" class="social-seal" title="Follow on Instagram">IG</a>
+                    <a href="#" class="social-seal">◆</a>
+                    <a href="#" class="social-seal">✦</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>EXPLORE</h3>
+                <ul class="footer-links">
+                    <li><a href="#vault">The Vintage Vault</a></li>
+                    <li><a href="#mixology">Royal Mixology</a></li>
+                    <li><a href="#heritage">Heritage & Story</a></li>
+                    <li><a href="#limited">Limited Editions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>JOIN US</h3>
+                <ul class="footer-links">
+                    <li><a href="#vip">VIP Club Access</a></li>
+                    <li><a href="#">Collector Events</a></li>
+                    <li><a href="#">NFT Gallery</a></li>
+                    <li><a href="#">Private Tastings</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>INFORMATION</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 MITTAL RESERVE · ALL RIGHTS RESERVED</p>
+            <p style="font-weight: 600; color: var(--antique-gold);">PLEASE DRINK RESPONSIBLY</p>
+            <p class="legal-text">
+                NOTICE: MITTAL RESERVE — Concept by Shaurya Mittal (Lucknow Public School / St. Paul Student)<br>
+                This is a digital creative project. No alcohol is sold here.<br>
+                Products depicted may vary. Do not share with anyone under legal drinking age.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 40; i++) {
+                const dust = document.createElement('div');
+                dust.className = 'dust-mote';
+                dust.style.left = Math.random() * 100 + '%';
+                dust.style.animationDelay = Math.random() * 20 + 's';
+                dust.style.animationDuration = (20 + Math.random() * 15) + 's';
+                container.appendChild(dust);
+            }
+            
+            for (let i = 0; i < 20; i++) {
+                const ember = document.createElement('div');
+                ember.className = 'ember';
+                ember.style.left = Math.random() * 100 + '%';
+				ember.style.bottom = '0';
+                ember.style.animationDelay = Math.random() * 15 + 's';
+                ember.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(ember);
+            }
+        }
+
+        function enterCellar() {
+            const day = document.getElementById('gateDay').value;
+            const month = document.getElementById('gateMonth').value;
+            const year = document.getElementById('gateYear').value;
+
+            if (!day || !month || !year) {
+                alert('Please enter your complete date of birth');
+                return;
+            }
+
+            const birthDate = new Date(year, month - 1, day);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            if (age >= 21) {
+                document.getElementById('waxSeal').classList.add('loaded');
+                setTimeout(() => {
+                    document.getElementById('gateOfTime').classList.add('hidden');
+                    localStorage.setItem('cellarVerified', 'true');
+                    createParticles();
+                }, 1000);
+            } else {
+                alert('You must be 21 or older to enter this site.');
+            }
+        }
+
+        window.addEventListener('load', function() {
+            if (localStorage.getItem('cellarVerified') === 'true') {
+                document.getElementById('gateOfTime').classList.add('hidden');
+                createParticles();
+            } else {
+                setTimeout(() => {
+                    document.getElementById('waxSeal').classList.add('loaded');
+                }, 2000);
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            const heritageBlocks = document.querySelectorAll('.heritage-block');
+            heritageBlocks.forEach(block => {
+                const rect = block.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    block.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        function submitVIP(event) {
+            event.preventDefault();
+            alert('Thank you for joining The Inner Circle! We will contact you shortly with exclusive access details.');
+            event.target.reset();
+        }
+
+        document.querySelectorAll('.btn-bottle, .btn-royal').forEach(button => {
+            if (button.textContent.includes('Reserve') || button.textContent.includes('View Story') || button.textContent.includes('RESERVE')) {
+                button.addEventListener('click', function() {
+                    alert('This exclusive product will be available soon. Join the VIP Club for early access!');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
