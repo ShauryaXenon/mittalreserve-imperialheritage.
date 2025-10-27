@@ -6,7 +6,7 @@
     <title>Mittal Reserve - A Legacy Reserved</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display+SC:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display+SC:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -22,8 +22,6 @@
             --faded-ivory: #F2E9E1;
             --amber-glow: #D4A574;
             --royal-red: #8B2635;
-            --sepia-brown: #5C4033;
-            --parchment: #E8DCC4;
         }
 
         html {
@@ -31,38 +29,11 @@
         }
 
         body {
-            font-family: 'Old Standard TT', 'Cormorant Garamond', serif;
+            font-family: 'Cormorant Garamond', serif;
             background: var(--charcoal-black);
             color: var(--faded-ivory);
             overflow-x: hidden;
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><defs><radialGradient id="sealGrad"><stop offset="0%%" stop-color="%23D4A574"/><stop offset="100%%" stop-color="%23B08B4F"/></radialGradient></defs><circle cx="18" cy="18" r="14" fill="url(%23sealGrad)" opacity="0.9"/><circle cx="18" cy="18" r="12" fill="%238B2635" opacity="0.8"/><circle cx="18" cy="18" r="9" fill="%23B08B4F"/><path d="M 18 9 L 19 16 L 18 18 L 17 16 Z M 18 27 L 19 20 L 18 18 L 17 20 Z M 27 18 L 20 19 L 18 18 L 20 17 Z M 9 18 L 16 19 L 18 18 L 16 17 Z" fill="%234A1A1A" opacity="0.6"/><text x="18" y="22" text-anchor="middle" font-size="9" font-weight="bold" fill="%23F2E9E1" font-family="serif">MR</text></svg>'), auto;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                repeating-linear-gradient(
-                    0deg,
-                    rgba(242, 233, 225, 0.02) 0px,
-                    transparent 1px,
-                    transparent 2px,
-                    rgba(242, 233, 225, 0.02) 3px
-                ),
-                repeating-linear-gradient(
-                    90deg,
-                    rgba(242, 233, 225, 0.02) 0px,
-                    transparent 1px,
-                    transparent 2px,
-                    rgba(242, 233, 225, 0.02) 3px
-                );
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.3;
         }
 
         h1, h2, h3, h4 {
@@ -77,19 +48,17 @@
         }
 
         ::-webkit-scrollbar {
-            width: 12px;
+            width: 8px;
         }
 
         ::-webkit-scrollbar-track {
             background: var(--charcoal-black);
-            border-left: 1px solid var(--antique-gold);
         }
 
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--antique-gold), var(--amber-glow));
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(180, 139, 79, 0.5);
-            border: 2px solid var(--charcoal-black);
         }
 
         .gate-of-time {
@@ -99,9 +68,8 @@
             width: 100%;
             height: 100%;
             background: 
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%23111111"/><circle cx="10" cy="10" r="1" fill="%23B08B4F" opacity="0.1"/><circle cx="50" cy="50" r="1" fill="%23D4A574" opacity="0.1"/><circle cx="90" cy="90" r="1" fill="%23B08B4F" opacity="0.1"/></svg>'),
                 radial-gradient(circle at center, rgba(74, 26, 26, 0.3) 0%, rgba(17, 17, 17, 0.95) 70%),
-                linear-gradient(180deg, var(--charcoal-black) 0%, var(--sepia-brown) 50%, var(--charcoal-black) 100%);
+                linear-gradient(180deg, var(--charcoal-black) 0%, var(--barrel-brown) 50%, var(--charcoal-black) 100%);
             z-index: 10000;
             display: flex;
             align-items: center;
@@ -225,11 +193,11 @@
             padding: 15px;
             font-size: 1.3rem;
             text-align: center;
-            background: rgba(232, 220, 196, 0.15);
+            background: rgba(242, 233, 225, 0.1);
             border: 2px solid var(--antique-gold);
             border-radius: 4px;
             color: var(--faded-ivory);
-            font-family: 'Old Standard TT', serif;
+            font-family: 'Cormorant Garamond', serif;
             box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -351,11 +319,11 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 60px;
-            background: rgba(17, 17, 17, 0.98);
+            padding: 25px 60px;
+            background: rgba(17, 17, 17, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 2px solid rgba(180, 139, 79, 0.4);
+            border-bottom: 1px solid rgba(180, 139, 79, 0.3);
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.8);
         }
 
@@ -374,55 +342,77 @@
         }
 
         .seal-emblem {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
+            background: 
+                radial-gradient(circle at 30% 30%, var(--royal-red) 0%, var(--deep-maroon) 50%, #2A0A0A 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.3rem;
+            color: var(--antique-gold);
+            font-weight: 900;
+            box-shadow: 
+                0 0 30px rgba(180, 139, 79, 0.7),
+                inset 0 0 15px rgba(0, 0, 0, 0.6),
+                inset 2px 2px 4px rgba(212, 165, 116, 0.3);
+            border: 3px double var(--antique-gold);
             position: relative;
-            filter: drop-shadow(0 0 20px rgba(180, 139, 79, 0.6));
-        }
-        
-        .seal-emblem img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            animation: logoGlow 4s ease-in-out infinite;
+            text-shadow: 
+                0 0 5px rgba(212, 165, 116, 0.8),
+                1px 1px 2px rgba(0, 0, 0, 0.9);
         }
 
-        @keyframes logoGlow {
-            0%, 100% { 
-                filter: brightness(1) drop-shadow(0 0 10px rgba(180, 139, 79, 0.4)); 
-            }
-            50% { 
-                filter: brightness(1.1) drop-shadow(0 0 20px rgba(212, 165, 116, 0.6)); 
-            }
+        .seal-emblem::before {
+            content: '';
+            position: absolute;
+            width: 72px;
+            height: 72px;
+            border: 2px solid rgba(180, 139, 79, 0.4);
+            border-radius: 50%;
+            top: -9px;
+            left: -9px;
+            border-style: dashed;
+        }
+
+        .seal-emblem::after {
+            content: '?';
+            position: absolute;
+            top: -8px;
+            font-size: 0.7rem;
+            color: var(--antique-gold);
+            opacity: 0.7;
         }
 
         .logo-text {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--antique-gold);
             font-family: 'Cinzel Decorative', serif;
-            letter-spacing: 6px;
+            letter-spacing: 5px;
             text-shadow: 
                 0 0 20px rgba(212, 165, 116, 0.8),
                 2px 2px 4px rgba(0, 0, 0, 0.9),
                 0 0 40px rgba(180, 139, 79, 0.4);
             position: relative;
         }
-        
+
         .logo-text::before {
-            content: '◆';
+            content: '?';
             position: absolute;
-            left: -30px;
+            left: -25px;
             color: var(--antique-gold);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             opacity: 0.7;
         }
-        
+
         .logo-text::after {
-            content: '◆';
+            content: '?';
             position: absolute;
-            right: -30px;
+            right: -25px;
             color: var(--antique-gold);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             opacity: 0.7;
         }
 
@@ -434,7 +424,7 @@
         nav a {
             color: var(--faded-ivory);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             position: relative;
             letter-spacing: 2px;
@@ -447,7 +437,7 @@
             bottom: -5px;
             left: 0;
             width: 0;
-            height: 2px;
+            height: 1px;
             background: var(--antique-gold);
             transition: width 0.3s ease;
         }
@@ -468,7 +458,6 @@
             justify-content: center;
             overflow: hidden;
             background: 
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23111111"/><path d="M 0 0 Q 50 50 0 100 Q 50 150 0 200 L 200 200 Q 150 150 200 100 Q 150 50 200 0 Z" fill="%234A1A1A" opacity="0.1"/></svg>'),
                 radial-gradient(ellipse at center, rgba(74, 26, 26, 0.4) 0%, rgba(17, 17, 17, 1) 70%),
                 linear-gradient(135deg, var(--barrel-brown) 0%, var(--charcoal-black) 100%);
         }
@@ -511,27 +500,30 @@
         }
 
         .hero-seal {
-            width: 140px;
-            height: 140px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--royal-red) 0%, var(--deep-maroon) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 0 auto 30px;
-            filter: drop-shadow(0 0 40px rgba(180, 139, 79, 0.7));
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.5rem;
+            color: var(--antique-gold);
+            font-weight: 900;
+            box-shadow: 0 0 40px rgba(180, 139, 79, 0.6);
             animation: sealPulse 3s ease-in-out infinite;
         }
 
-        .hero-seal img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
         .hero-title {
-            font-size: 6rem;
+            font-size: 5.5rem;
             color: var(--antique-gold);
             text-shadow: 
                 0 0 40px rgba(212, 165, 116, 0.6),
                 4px 4px 8px rgba(0, 0, 0, 0.8);
             margin-bottom: 25px;
-            letter-spacing: 12px;
+            letter-spacing: 10px;
             animation: titleGlow 4s ease-in-out infinite;
         }
 
@@ -541,16 +533,16 @@
         }
 
         .hero-tagline {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--faded-ivory);
-            font-family: 'Old Standard TT', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             margin-bottom: 20px;
             opacity: 0.95;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--amber-glow);
             margin-bottom: 60px;
             letter-spacing: 3px;
@@ -640,15 +632,15 @@
         }
 
         .section-title {
-            font-size: 4.5rem;
+            font-size: 4rem;
             color: var(--antique-gold);
             margin-bottom: 30px;
             text-shadow: 0 0 30px rgba(212, 165, 116, 0.4);
-            letter-spacing: 10px;
+            letter-spacing: 8px;
         }
 
         .section-subtitle {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--faded-ivory);
             opacity: 0.9;
             font-style: italic;
@@ -665,12 +657,12 @@
         }
 
         .category-title {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--amber-glow);
             margin-bottom: 15px;
             text-align: center;
             font-family: 'Playfair Display SC', serif;
-            letter-spacing: 6px;
+            letter-spacing: 5px;
         }
 
         .category-subtitle {
@@ -678,7 +670,7 @@
             color: var(--faded-ivory);
             opacity: 0.8;
             margin-bottom: 60px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-style: italic;
         }
 
@@ -733,7 +725,7 @@
             height: 280px;
             background: 
                 radial-gradient(ellipse at center, rgba(212, 165, 116, 0.15) 0%, transparent 70%),
-                linear-gradient(180deg, rgba(232, 220, 196, 0.08) 0%, rgba(180, 139, 79, 0.12) 100%);
+                linear-gradient(180deg, rgba(242, 233, 225, 0.05) 0%, rgba(180, 139, 79, 0.1) 100%);
             border: 2px solid rgba(180, 139, 79, 0.2);
             border-radius: 6px;
             margin-bottom: 35px;
@@ -759,7 +751,7 @@
         }
 
         .bottle-name {
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             color: var(--antique-gold);
             margin-bottom: 15px;
             letter-spacing: 2px;
@@ -775,7 +767,7 @@
         }
 
         .bottle-tagline {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--faded-ivory);
             font-style: italic;
             margin-bottom: 20px;
@@ -873,7 +865,7 @@
         }
 
         .cocktail-name {
-            font-size: 2.1rem;
+            font-size: 2rem;
             color: var(--antique-gold);
             margin-bottom: 20px;
             font-family: 'Playfair Display SC', serif;
@@ -881,7 +873,7 @@
         }
 
         .cocktail-recipe {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--faded-ivory);
             margin-bottom: 20px;
             line-height: 1.9;
@@ -889,7 +881,7 @@
         }
 
         .cocktail-method {
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             color: var(--amber-glow);
             font-style: italic;
             margin-bottom: 25px;
@@ -954,7 +946,7 @@
         }
 
         .heritage-year {
-            font-size: 2.6rem;
+            font-size: 2.5rem;
             color: var(--antique-gold);
             margin-bottom: 20px;
             font-family: 'Playfair Display SC', serif;
@@ -962,7 +954,7 @@
         }
 
         .heritage-story {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--faded-ivory);
             line-height: 2.2;
             opacity: 0.9;
@@ -1011,7 +1003,7 @@
         }
 
         .perk-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--antique-gold);
             margin-bottom: 15px;
             font-family: 'Playfair Display SC', serif;
@@ -1019,7 +1011,7 @@
         }
 
         .perk-description {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--faded-ivory);
             opacity: 0.85;
         }
@@ -1040,7 +1032,7 @@
 
         .form-label {
             display: block;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--antique-gold);
             margin-bottom: 12px;
             letter-spacing: 2px;
@@ -1050,12 +1042,12 @@
         .form-input {
             width: 100%;
             padding: 16px;
-            background: rgba(232, 220, 196, 0.12);
+            background: rgba(242, 233, 225, 0.1);
             border: 2px solid rgba(180, 139, 79, 0.4);
             border-radius: 4px;
             color: var(--faded-ivory);
             font-size: 1.05rem;
-            font-family: 'Old Standard TT', serif;
+            font-family: 'Cormorant Garamond', serif;
             transition: all 0.3s ease;
             box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
         }
@@ -1161,7 +1153,7 @@
         }
 
         .museum-name {
-            font-size: 2.3rem;
+            font-size: 2.2rem;
             color: var(--antique-gold);
             margin-bottom: 20px;
             font-family: 'Playfair Display SC', serif;
@@ -1169,7 +1161,7 @@
         }
 
         .museum-description {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--faded-ivory);
             margin-bottom: 30px;
             line-height: 2;
@@ -1201,16 +1193,19 @@
         }
 
         .footer-seal {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, var(--royal-red) 0%, var(--deep-maroon) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 0 auto 40px;
-            filter: drop-shadow(0 0 40px rgba(180, 139, 79, 0.6));
-        }
-
-        .footer-seal img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2rem;
+            color: var(--antique-gold);
+            font-weight: 900;
+            box-shadow: 0 0 40px rgba(180, 139, 79, 0.6);
         }
 
         .footer-content {
@@ -1223,7 +1218,7 @@
         }
 
         .footer-section h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--antique-gold);
             margin-bottom: 25px;
             font-family: 'Playfair Display SC', serif;
@@ -1300,11 +1295,189 @@
         }
 
         .legal-text {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--amber-glow);
             opacity: 0.7;
             margin-top: 20px;
             line-height: 1.8;
+        }
+
+        .royal-disclaimer-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 420px;
+            max-height: 85vh;
+            background: linear-gradient(135deg, rgba(59, 43, 36, 0.98) 0%, rgba(74, 26, 26, 0.98) 100%);
+            border: 3px double var(--antique-gold);
+            border-radius: 8px;
+            padding: 35px 30px;
+            z-index: 9999;
+            opacity: 0;
+            transform: translateY(-30px);
+            transition: all 1.2s ease;
+            pointer-events: none;
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.9),
+                inset 0 0 60px rgba(180, 139, 79, 0.1);
+            overflow-y: auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .royal-disclaimer-panel.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .royal-disclaimer-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .royal-disclaimer-panel::-webkit-scrollbar-track {
+            background: rgba(17, 17, 17, 0.5);
+            border-radius: 4px;
+        }
+
+        .royal-disclaimer-panel::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--antique-gold), var(--amber-glow));
+            border-radius: 4px;
+        }
+
+        .disclaimer-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(180, 139, 79, 0.3);
+        }
+
+        .disclaimer-seal {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, var(--royal-red) 0%, var(--deep-maroon) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.3rem;
+            color: var(--antique-gold);
+            font-weight: 900;
+            box-shadow: 0 0 30px rgba(180, 139, 79, 0.6);
+            border: 2px solid var(--antique-gold);
+        }
+
+        .disclaimer-title {
+            font-family: 'Playfair Display SC', serif;
+            font-size: 1.4rem;
+            color: var(--antique-gold);
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .disclaimer-subtitle {
+            font-size: 0.85rem;
+            color: var(--faded-ivory);
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .disclaimer-bottle {
+            width: 100%;
+            height: 160px;
+            background: radial-gradient(ellipse at center, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+            border: 2px solid rgba(180, 139, 79, 0.3);
+            border-radius: 6px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .disclaimer-bottle img {
+            height: 140px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 20px rgba(180, 139, 79, 0.4));
+        }
+
+        .disclaimer-section {
+            margin-bottom: 18px;
+        }
+
+        .disclaimer-label {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.75rem;
+            color: var(--amber-glow);
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .disclaimer-text {
+            font-size: 0.9rem;
+            color: var(--faded-ivory);
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        .disclaimer-text strong {
+            color: var(--antique-gold);
+            font-weight: 600;
+        }
+
+        .disclaimer-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .disclaimer-link {
+            color: var(--antique-gold);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .disclaimer-link:hover {
+            border-bottom-color: var(--antique-gold);
+            opacity: 0.8;
+        }
+
+        .disclaimer-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--antique-gold), transparent);
+            margin: 20px 0;
+        }
+
+        .disclaimer-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background: rgba(180, 139, 79, 0.2);
+            border: 1px solid var(--antique-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--antique-gold);
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .disclaimer-close:hover {
+            background: var(--antique-gold);
+            color: var(--charcoal-black);
+            transform: rotate(90deg);
         }
 
         @media (max-width: 768px) {
@@ -1337,6 +1510,15 @@
             .vip-form-panel {
                 padding: 40px 25px;
             }
+
+            .royal-disclaimer-panel {
+                width: 90%;
+                left: 5%;
+                right: 5%;
+                top: 10px;
+                max-height: 90vh;
+                padding: 25px 20px;
+            }
         }
     </style>
 </head>
@@ -1363,9 +1545,7 @@
     <header>
         <div class="header-content">
             <div class="logo-seal">
-                <div class="seal-emblem">
-                    <img src="attached_assets/mittal reserve logo_1761563187348.png" alt="Mittal Reserve Logo">
-                </div>
+                <div class="seal-emblem">MR</div>
                 <div class="logo-text">MITTAL RESERVE</div>
             </div>
             <nav>
@@ -1380,9 +1560,7 @@
 
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-seal">
-                <img src="attached_assets/mittal reserve logo_1761563187348.png" alt="Mittal Reserve Seal">
-            </div>
+            <div class="hero-seal">MR</div>
             <h1 class="hero-title">MITTAL RESERVE</h1>
             <p class="hero-tagline">A Legacy Reserved</p>
             <div class="cellar-divider"></div>
@@ -1396,7 +1574,7 @@
 
     <section id="vault" class="vault">
         <div class="section-header">
-            <div class="section-ornament">◈</div>
+            <div class="section-ornament">?</div>
             <h2 class="section-title">THE VINTAGE VAULT</h2>
             <div class="cellar-divider"></div>
             <p class="section-subtitle">Born of Fire, Aged in Silence, Reserved for Eternity</p>
@@ -1592,7 +1770,7 @@
 
     <section id="mixology" class="mixology">
         <div class="section-header">
-            <div class="section-ornament">◈</div>
+            <div class="section-ornament">?</div>
             <h2 class="section-title">ROYAL MIXOLOGY</h2>
             <div class="cellar-divider"></div>
             <p class="section-subtitle">Mixology for Monarchs</p>
@@ -1600,7 +1778,7 @@
 
         <div class="cocktails-scroll">
             <div class="parchment-card">
-                <div class="cocktail-glass-icon">🥃</div>
+                <div class="cocktail-glass-icon">??</div>
                 <h3 class="cocktail-name">The Maharaja Mule</h3>
                 <p class="cocktail-recipe">
                     Mittal Barrel Strength · Spiced Ginger Beer<br>
@@ -1617,7 +1795,7 @@
             </div>
 
             <div class="parchment-card">
-                <div class="cocktail-glass-icon">🍾</div>
+                <div class="cocktail-glass-icon">??</div>
                 <h3 class="cocktail-name">Golden Dawn</h3>
                 <p class="cocktail-recipe">
                     Mittal Heritage XII · Saffron Honey Syrup<br>
@@ -1634,7 +1812,7 @@
             </div>
 
             <div class="parchment-card">
-                <div class="cocktail-glass-icon">🍷</div>
+                <div class="cocktail-glass-icon">??</div>
                 <h3 class="cocktail-name">Rajput Royale</h3>
                 <p class="cocktail-recipe">
                     Mittal Crimson Royale · Pomegranate Reduction<br>
@@ -1651,7 +1829,7 @@
             </div>
 
             <div class="parchment-card">
-                <div class="cocktail-glass-icon">☕</div>
+                <div class="cocktail-glass-icon">?</div>
                 <h3 class="cocktail-name">Colonial Twilight</h3>
                 <p class="cocktail-recipe">
                     Mittal Imperial Darbar · Smoked Tea Infusion<br>
@@ -1671,7 +1849,7 @@
 
     <section id="heritage" class="heritage">
         <div class="section-header">
-            <div class="section-ornament">◈</div>
+            <div class="section-ornament">?</div>
             <h2 class="section-title">HERITAGE & LEGACY</h2>
             <div class="cellar-divider"></div>
             <p class="section-subtitle">A Journey Through Time, Tradition, and Excellence</p>
@@ -1706,7 +1884,7 @@
 
     <section id="vip" class="vip-club">
         <div class="section-header">
-            <div class="section-ornament">◈</div>
+            <div class="section-ornament">?</div>
             <h2 class="section-title">THE INNER CIRCLE</h2>
             <div class="cellar-divider"></div>
             <p class="section-subtitle">Enter the Collector's Vault</p>
@@ -1715,22 +1893,22 @@
         <div class="vip-container">
             <div class="vip-perks">
                 <div class="vip-perk">
-                    <div class="perk-icon">🏆</div>
+                    <div class="perk-icon">??</div>
                     <h4 class="perk-title">Early Access</h4>
                     <p class="perk-description">Pre-order limited editions before public release</p>
                 </div>
                 <div class="vip-perk">
-                    <div class="perk-icon">🎨</div>
+                    <div class="perk-icon">??</div>
                     <h4 class="perk-title">NFT Provenance</h4>
                     <p class="perk-description">Blockchain authentication & digital collectibles</p>
                 </div>
                 <div class="vip-perk">
-                    <div class="perk-icon">🥃</div>
+                    <div class="perk-icon">??</div>
                     <h4 class="perk-title">Private Tastings</h4>
                     <p class="perk-description">Invitation-only events with master distillers</p>
                 </div>
                 <div class="vip-perk">
-                    <div class="perk-icon">📦</div>
+                    <div class="perk-icon">??</div>
                     <h4 class="perk-title">Reserved Allocations</h4>
                     <p class="perk-description">Guaranteed access to ultra-rare releases</p>
                 </div>
@@ -1738,7 +1916,7 @@
 
             <div class="vip-form-panel">
                 <h3 class="royal-text" style="text-align: center; color: var(--antique-gold); margin-bottom: 40px; font-size: 2rem;">UNLOCK ACCESS</h3>
-                
+
                 <form id="vipForm" onsubmit="submitVIP(event)">
                     <div class="form-field">
                         <label class="form-label">FULL NAME</label>
@@ -1780,7 +1958,7 @@
 
     <section id="limited" class="limited-editions">
         <div class="section-header">
-            <div class="section-ornament">◈</div>
+            <div class="section-ornament">?</div>
             <h2 class="section-title">LIMITED EDITIONS</h2>
             <div class="cellar-divider"></div>
             <p class="section-subtitle">The Museum of Time</p>
@@ -1826,10 +2004,8 @@
     </section>
 
     <footer>
-        <div class="footer-seal">
-            <img src="attached_assets/mittal reserve logo_1761563187348.png" alt="Mittal Reserve">
-        </div>
-        
+        <div class="footer-seal">MR</div>
+
         <div class="footer-content">
             <div class="footer-section">
                 <h3>MITTAL RESERVE</h3>
@@ -1837,9 +2013,10 @@
                     A legacy reserved for those who appreciate the finest things in life. Crafted with passion, aged with patience, enjoyed with reverence.
                 </p>
                 <div class="social-seals">
-                    <a href="https://www.instagram.com/drunk___captain/?next=%2Fdrunk___captain%2F&hl=en" target="_blank" class="social-seal" title="Follow on Instagram">IG</a>
-                    <a href="#" class="social-seal">◆</a>
-                    <a href="#" class="social-seal">✦</a>
+                    <a href="https://www.instagram.com/drunk___captain/?next=%2Fdrunk___captain%2F&hl=en" target="_blank" class="social-seal" title="Follow on Instagram">?</a>
+                    <a href="https://www.instagram.com/drunk___captain/?next=%2Fdrunk___captain%2F&hl=en" target="_blank" class="social-seal" title="Instagram - @drunk___captain">IG</a>
+                    <a href="#" class="social-seal">?</a>
+                    <a href="#" class="social-seal">?</a>
                 </div>
             </div>
 
@@ -1878,17 +2055,76 @@
             <p>© 2024 MITTAL RESERVE · ALL RIGHTS RESERVED</p>
             <p style="font-weight: 600; color: var(--antique-gold);">PLEASE DRINK RESPONSIBLY</p>
             <p class="legal-text">
-                NOTICE: MITTAL RESERVE — Concept by Shaurya Mittal (Lucknow Public School / St. Paul Student)<br>
-                This is a digital creative project. No alcohol is sold here.<br>
-                Products depicted may vary. Do not share with anyone under legal drinking age.
+                Products depicted may vary. Do not share with anyone under legal drinking age.<br>
+                This website is for informational and marketing purposes only.
             </p>
         </div>
     </footer>
 
+    <div class="royal-disclaimer-panel" id="royalDisclaimer">
+        <div class="disclaimer-close" onclick="closeDisclaimer()">?</div>
+
+        <div class="disclaimer-header">
+            <div class="disclaimer-seal">MR</div>
+            <h3 class="disclaimer-title">LEGAL NOTICE</h3>
+            <p class="disclaimer-subtitle">Brand & Heritage Protection</p>
+        </div>
+
+        <div class="disclaimer-bottle">
+            <img src="vintage_luxury_whisky_bottle_c1039f3b.png" alt="Mittal Reserve">
+        </div>
+
+        <div class="disclaimer-section">
+            <span class="disclaimer-label">? Disclaimer</span>
+            <p class="disclaimer-text">This is a conceptual showcase website created solely for artistic, educational, and design purposes. No alcohol or real commercial product is sold here.</p>
+        </div>
+
+        <div class="disclaimer-section">
+            <span class="disclaimer-label">? Age Restriction</span>
+            <p class="disclaimer-text">For audiences aged <strong>21 years and above only.</strong></p>
+        </div>
+
+        <div class="disclaimer-section">
+            <span class="disclaimer-label">? Responsible Drinking</span>
+            <p class="disclaimer-text"><strong>Please Enjoy Responsibly.</strong></p>
+        </div>
+
+        <div class="disclaimer-divider"></div>
+
+        <div class="disclaimer-section">
+            <span class="disclaimer-label">? Legal Rights</span>
+            <p class="disclaimer-text">© Mittal Reserve. All Rights Reserved. Any unauthorized copying, modification, or reuse of the website's design, text, visuals, or code is strictly prohibited and may result in legal consequences.</p>
+        </div>
+
+        <div class="disclaimer-section">
+            <span class="disclaimer-label">? Intellectual Property</span>
+            <p class="disclaimer-text">All creative rights, designs, brand elements, and conceptual frameworks are the exclusive property of <strong>Mittal Reserve</strong> and <strong>Shaurya Mittal</strong>. Any imitation or theft will be legally punishable.</p>
+        </div>
+
+        <div class="disclaimer-section">
+            <span class="disclaimer-label">? Brand Ownership</span>
+            <p class="disclaimer-text"><strong>CEO & Founder: Shaurya Mittal</strong> — Visionary behind the Heritage of Luxury.</p>
+        </div>
+
+        <div class="disclaimer-divider"></div>
+
+        <div class="disclaimer-section">
+            <span class="disclaimer-label">? Sustainability</span>
+            <p class="disclaimer-text">Committed to Craft, Heritage & Responsibility.</p>
+        </div>
+
+        <div class="disclaimer-section">
+            <div class="disclaimer-links">
+                <a href="#" class="disclaimer-link">Privacy Policy</a>
+                <a href="#" class="disclaimer-link">Terms of Use</a>
+            </div>
+        </div>
+    </div>
+
     <script>
         function createParticles() {
             const container = document.getElementById('particles');
-            for (let i = 0; i < 40; i++) {
+            for (let i = 0; i < 10; i++) {
                 const dust = document.createElement('div');
                 dust.className = 'dust-mote';
                 dust.style.left = Math.random() * 100 + '%';
@@ -1896,12 +2132,12 @@
                 dust.style.animationDuration = (20 + Math.random() * 15) + 's';
                 container.appendChild(dust);
             }
-            
-            for (let i = 0; i < 20; i++) {
+
+            for (let i = 0; i < 10; i++) {
                 const ember = document.createElement('div');
                 ember.className = 'ember';
                 ember.style.left = Math.random() * 100 + '%';
-				ember.style.bottom = '0';
+                ember.style.bottom = '0';
                 ember.style.animationDelay = Math.random() * 15 + 's';
                 ember.style.animationDuration = (15 + Math.random() * 10) + 's';
                 container.appendChild(ember);
@@ -1922,7 +2158,7 @@
             const today = new Date();
             let age = today.getFullYear() - birthDate.getFullYear();
             const monthDiff = today.getMonth() - birthDate.getMonth();
-            
+
             if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
                 age--;
             }
@@ -1985,6 +2221,16 @@
                     alert('This exclusive product will be available soon. Join the VIP Club for early access!');
                 });
             }
+        });
+
+        function closeDisclaimer() {
+            document.getElementById('royalDisclaimer').classList.remove('visible');
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('royalDisclaimer').classList.add('visible');
+            }, 5000);
         });
     </script>
 </body>
